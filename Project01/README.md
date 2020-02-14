@@ -7,8 +7,8 @@
 
    When this script is executed, it will echo out a message asking the user for a number, and depending on that number will execute the feature corresponding to it.
    This is achieved by reading in a value from the user, and it will be compared to other values in the script, and once it finds a match, then a certain feature inside the if statement will be executed.
-   Possible values for the feature number:
-	2, 3, 4
+   Possible values for the feature number: 
+      2, 3, 4
 
 
 ## Feature 01
