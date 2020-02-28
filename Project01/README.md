@@ -8,7 +8,7 @@
    When this script is executed, it will echo out a message asking the user for a number, and depending on that number will execute the feature corresponding to it.
    This is achieved by reading in a value from the user, and it will be compared to other values in the script, and once it finds a match, then a certain feature inside the if statement will be executed.
    Possible values for the feature number: 
-       2, 3, 4
+       2, 3, 4, 5, 6, 7, 8, 9
 
 
 ## Feature 01
@@ -43,20 +43,63 @@ in a descending order. One pitfall of this feature is that although it does disp
     
   **Reference:** Some code was taken from [[https://stackoverflow.com/questions/5905054/how-can-i-recursively-find-all-files-in-current-and-subfolders-based-on-wildcard]]
 
+## Feature 04
+
+  **Description:** This feature finds every file in the repo that has the word "#FIXME" in its last line, and if so, then the file names will be stored in a file 'fixme.log'.
+
+  **Execution: ** Execute this feature by entering 5 as the feature number during the prompt.
+
+  **Reference:** Some code was taken from [[https://unix.stackexchange.com/questions/213610/find-last-line-of-a-file-for-matching-string]]
+					  [[https://www.experts-exchange.com/questions/28923569/grep-egrep-multiple-words-while-using-tail.html]]
+
+## Feature 05
+
+  **Description:** This feature prompts the user to enter a tag word, and then it searches the repo for all the python files that include a comment '#' and the tag word, while reading every line. If a line
+  contains the comment and the tag word, then that line will be placed in a file called 'tag_word'.log, where tag_word is the tag word that the user entered. In the end, this file will contain all occurrences
+  of the comment and the tag word that occurred in the repo. One downside to this feature is that it does not show from which file the line was written, but is still able to find each line containing the
+  comment and the tag word.
+
+  **Execution: ** Execute this feature by entering 6 as the feature number during the prompt, and then enter any tag word (example: testing).
+
+  **Reference:** Some code was taken from [[https://www.cyberciti.biz/faq/unix-loop-through-files-in-a-directory/]]
+					  [[https://stackoverflow.com/questions/16961084/linux-shell-commands-cat-and-grep]]
+
+## Feature 06
+
+  **Description:** This feature has two sub-features, which are the Backup and Delete feature, and the Restore feature. The Backup and Delete sub-feature creates an empty directory called backup, and,
+   finds all the files with the "tmp" file extension, and copies them to this backup directory, as well as deleting them from their original location. The previous file paths of these files will be
+   stored in a file called restore.log. As for the second sub-feature, then it restores all of the ".tmp" files that are stored in restore.log back to their original location, where if the file restore.log
+   does not exist, then an error message will be thrown".
+
+  **Execution:** Execute this feature by entering 7 as the feature number during the prompt, and then enter 1 for executing the Backup and Delete Feature, or enter 2 to execute the Restore Feature.
+
+  **Reference:** Some code was taken from [[https://stackoverflow.com/questions/18153878/how-to-avoid-are-the-same-file-warning-message-when-using-cp-in-linux]]
+					  [[https://unix.stackexchange.com/questions/429382/need-to-loop-through-folder-and-move-files-to-different-directory]] 
+
 ## Custom Feature 1: Delete Occurrences of a String
 
-  **Description:** This custom feature prompts the user to select between two features, either deleting all lines that contain a certain keyword, and copying their occurrences to another file, or deleting the
-   actual files that contain that string from their original location, and copy them to another directory. The search in the repo is done on a certain file extension that is also entered by the user.
+  
+  **Description:** This custom feature prompts the user to select between two features. For both features, the user is prompted to enter a keyword and a file extension. The first sub-feature searches
+   the files in the repo line-by-line, and wherever it finds that string, then it will delete it. The occurrences of that string in all the files will be stored in another file called 'keyword'.log
+  (keyword being the keyword entered by the user). The second sub-feature searches for files containing that string, and deletes them from their original location, and copies them to another directory called
+  'keyword'.
 
-   Regardless of which feature the user selects, the first step will be the same, through which the user will be prompted to enter a file extension, and to enter a keyword.
+  **Execution:** Execute this feature by entering 8 as the feature number during the prompt. Then either enter 1 for executing the first sub-feature, or enter 2 to execute the second sub-feature. Lastly,
+   when prompted, enter a keyword (example: hello), and a file extension (example: html).
 
-   If the user selects the first feature,a recursive search will be done through all the files in the repo to delete all the lines that contain it, and deletes them. Also, the occurrences of those strings
-   will be documented in another file, which will be named by: '$user_keyword'.log.
-
-   If the user selects the second feature, a recursive search through the repo for files containing that string, and delete them from their original location, and copy those files to another directory.
+  **References:** Some code was taken from [[https://stackoverflow.com/questions/5410757/delete-lines-in-a-text-file-that-contain-a-specific-string]]
+					   [[https://stackoverflow.com/questions/15617016/copy-all-files-with-a-certain-extension-from-all-subdirectories]] 
 
 
 ## Custom Feature 2: Find and Replace Strings in Files
+ 
+  **Description:** This custom feature has two sub-features. When selecting either of the two sub-features, the user will be prompted to enter a word they want to search for, a file extension, and a word
+  they want to replace the first one with. When executing the first sub-feature, then all of the files in the repo will be searched line-by-line, and every occurrence of the first word will be replaced with
+  the second word. When executing the second sub-feature, then every file that contains the first word entered by the user will be appended by adding the second word to that file.
 
-  **Description:** This custom feature will prompt the user to enter 2 keywords, the first one being the word they are looking for, and the second one being the word they want to replace it with.
-   Then, the repo will be searched for files containing that string, and will replace the first word with the second word in all occurrences.
+  **Execution:** Execute this feature by entering 9 as the feature number during the prompt. Then, either enter 1 for executing the first sub-feature, or enter 2 to execute te second sub-feature. Lastly,
+   when prompted, enter the first word, then enter the file extension, then enter the second word.
+
+  **References:** Some code was taken from [[https://askubuntu.com/questions/20414/find-and-replace-text-within-a-file-using-commands]]
+
+
