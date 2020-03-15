@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Ayed Naber Resume</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!--Custom fonts. To improve load times, remove this and update the h1 styling in style.css--> 
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Capriola' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	
+	
+	
+	<!-- just in case viewer is using Internet Explorer -->
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+<body>
+	
+	<!-- Header-->
+	
+		
+
+
+	
+
+	<header class="header1">
+		<button class="lightmodebtn" id="themebtn" onclick="lightFunction();">Light Mode</button>
+		<h1 id = "myname_header" style="text-align: center; left: -35px;">Ayed Naber</h1>
+		<p id="myname_desc">Programmer - Student at McMaster University</p>
+		<img src="img/Personal Photo.jpg" width="250px;" height="auto" alt="Personal Photo" id="personalImg">
+
+		<div id="myModal" class="modal">
+			
+			<span class="close">&times;</span>
+
+			<img class="modalContent" id="newImg">
+
+			<div id="caption"></div>
+		</div>
+
+
+	</header>
+
+	<div class="container">
+		
+		<!-- Introduction-->
+		<section class="center">
+			<h1>Welcome!</h1>
+			<p>
+				I am a passionate and avid learner of different computing concepts that are able to strengthen my skill-set.
+				<br> Here is a summary of my qualifications:
+				<ul>
+					<li>Excellent <span>team member</span>, evolved through years of participating in team sports (including soccer and basketball), and competing on the national level.</li>
+					<li>Remarkable <span>communication skills</span>, built up through multiple colunterring experiences, mostly focusing on developing campaigns to help the less-privileged in the community.</li>
+					<li><span>Passionate</span> about improving my skill-set through learning new programming languages, and integrating <span>scientific and engineering thinking</span> into software projects.</li>
+				</ul>
+			</p>
+		</section>
+		
+		<hr>
+
+				
+			</div>
+		<section>
+			<div>
+				<h1 id="techstr">Technical Strengths</h1>
+				<div class="reveal-textImg" id="tech1" style="background-image: url(img/prog_lang.jpg);" data-text="Programming Languages: Python and Haskell (Proficient)
+				HTML, CSS, JavaScript, Bash"></div>
+				<div class="reveal-textImg" id="tech2" style="background-image: url(img/tools.jpg);" data-text="Tools: PyCharm, VS Code, Sublime Text, MS Office Suite (Word, Excel, PowerPoint)"></div>
+				<div class="reveal-textImg" id="tech3" style="background-image: url(img/languages.jpg);" data-text="Languages: English, Arabic, German"></div>
+				<div class="reveal-textImg" id="tech4" style="background-image: url(img/interests.png);" data-text="Interests: Machine Learning, Cyber Security, Artificial Intelligence, Programming Languages, Internet Systems"></div>
+			</div>
+
+			<hr style="max-width: 800px;">
+
+		</section>
+
+		<div class="container">
+	
+			<h1 class="techexp">Technical Experience</h1>
+			<div class="tab">
+				<button class="verticalTab" id = "defaultOpen"onclick="openContent(event, 'webDev')">Web Developer</button>
+				<button class="verticalTab" onclick="openContent(event, 'webDev2')">DeltaHacks Hackathon Participant</button>
+				<button class="verticalTab" onclick="openContent(event, 'webDev3')">Internship at Software Company</button>
+			</div>
+
+			<div id="webDev" class="tabcontent">
+				<h3>Web Developer | Personal Project</h3>
+				<h4 id="subheader">November 2018 - January 2019 | Amman, Jordan</h4>
+				<ul>
+					<li><span>Created </span> a website for a car maintenance company, to help <span> ease communication </span> between the firm and customers.</li>
+					<li><span>Implemented </span> PHP and SQL for back-end development, to include a <span>database</span>, and a secure system for e-commerce.</li>
+					<li><span>Designed</span> the website using HTML and CSS, and used JavaScript to send alert messages.</li>
+				</ul>
+			</div>
+
+			<div id="webDev2" class="tabcontent">
+				<h3>DeltaHacks Hackathon Participant</h3>
+				<h4 id="subheader">January 2020 | McMaster University, Hamilton, ON</h4>
+				<ul>
+					<li>Participated in hands-on workshops that spanned over two days, containing <span>Adobe</span> workshop and <span>Web Development</span> workshop.</li>
+					<li>Deliberated solutions to <span>real problems</span> through implementing different programming languages and took part in the <span> development </span> of an Android <span>application.</span></li>
+				</ul>
+			</div>
+
+			<div id="webDev3" class="tabcontent">
+				<h3>Internship at Software Company</h3>
+				<h4 id="subheader">Estarta Solutions (A Cisco Partner)</h4>
+				<h4 id="subheader">July 2018 | Amman, Jordan</h4>
+				<ul>
+					<li>Gained <span>hands-on experience</span> in different workshops revolving around networks, telecommunications, cyber security, and Internet of Things (IOT).</li>
+					<li>Got exposed to cases with <span>real clients.</span></li>
+				</ul>
+			</div>
+
+
+
+		
+		
+		<hr>
+		<hr>
+			
+		<!--Experience Tables-->
+		<section class="experience">
+			<h1 class="techexp">Volunteering | Extracirricular Activities</h1>
+			<div class="row">
+				<div class="grid-2">
+					<h2 class="volunteer">Delivering Food to the Underprivileged</h2>
+					<p class="volunteer1">Tkiyet Um Ali | Amman, Jordan</p>
+					<p class="volunteer">September 2016 - June 2019</p>
+				</div>
+				<div class="grid-4" id="experience">
+					<ul>
+						<li><span>Worked</span> with non-profit organizations to help pack, and deliver food and basic life supplies to rural areas.</li>
+						<li><span>Improved leadership and teamwork</span>, in order to maintain an <span>efficient</span> working environment.</li>
+					</ul>
+					<button class="lightmodebtn" id="themebtn2" onclick="appearImg();">Show Image</button>
+					<img src="img/volunteer.jpg" width="300px;" height="auto" alt="Personal Photo" id="volunteer" style="display: none;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="grid-2">
+					<h2 class="volunteer">Soccer Varsity Team</h2>
+					<p class="volunteer1">Mashrek International School</p>
+					<p class="volunteer">September 2016 - May 2018</p>
+				</div>
+				<div class="grid-4">
+					<ul>
+						<li><span>Increased trustworthiness</span> among teammates.</li>
+						<li>Taught me to become more dedicated to reach certain goals.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="grid-2">
+					<h2 class="volunteer">Volunteering with the Local Church</h2>
+					<p class="volunteer1">Amman, Jordan</p>
+					<p class="volunteer1">September 2015 - July 2019</p>
+				</div>
+				<div class="grid-4">
+					<ul>
+						<li>Helped in developing projects to raise funds/clothes for the poor.</li>
+						<li>Developed my communication skills and willingness to help others.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		
+		<hr>
+
+		<div class="contactus">
+			<h1 style="text-align: center;">My Social Media</h1>
+			<ul class="social">
+               <li><a href="https://www.facebook.com/ayed.naber" target="_blank"><i id = "facebookicon" class="fa fa-facebook"></i></a></li>
+               <li><a href="https://www.instagram.com/ayed_naber/" target="_blank"><i id = "instagramicon" class="fa fa-instagram"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/ayed-naber/" target="_blank"><i id = "linkedinicon" class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://github.com/ayednaber" target="_blank"><i id = "githubicon" class="fa fa-github"></i></a></li>
+            </ul>
+		</div>
+
+		<hr>
+		
+		<div class="contactus">
+			<h1 style="text-align: center;">Click Below to Download my Resume</h1>
+			<ul class="social" style="padding-left: 360px;">
+               <li><a href="Ayed Resume.pdf" download="Ayed_Naber_Resume.pdf" target="_blank"><i id = "downloadicon" class="fa fa-download"></i></a></li>
+            </ul>
+		</div>
+		
+
+	<script src="js/main.js"></script>
+
+</body>
+</html>
