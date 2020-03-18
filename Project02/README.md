@@ -32,7 +32,11 @@ This webpage is Ayed Naber's custom CV that contains all the technical experienc
 - This resource helped in revealing text by sliding images when hovering, used to demonstrate strengths, and it is referenced here [[https://www.youtube.com/watch?v=TG4xu6q2VmA]]
 - The following Bootstrap library was used for social media icons such as Facebook and Instagram, is the FontAwesome library, imported from this resource [[https://www.bootstrapcdn.com/fontawesome/]]
 - The following JavaScript code from W3Schools helped in creating a Show/Hide Image feature in the resume, referenced here [[https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp]].
+- The two following resources helped in creating a Show/Hide Image feature in the resume, which are referenced here: 
+[[https://stackoverflow.com/questions/1309452/how-to-replace-innerhtml-of-a-div-using-jquery]]
+[[https://stackoverflow.com/questions/19107949/jquery-html-inside-conditional-check]]
 - This resource helped making external links and files open in a new tab, so that the employer is not disrupted when viewing the resume, referenced here [[https://www.thesitewizard.com/html-tutorial/open-links-in-new-window-or-tab.shtml]]
+
 
 
  
