@@ -1,14 +1,13 @@
-function appearImg() {
-	var volunteerImg = document.getElementById("volunteer");
-	var volunteerbtn = document.getElementById("themebtn2");
-	if (volunteerImg.style.display == "none") {
-		volunteerImg.style.display = "block";
-		volunteerbtn.innerHTML = "Hide Image";
-	} else {
-		volunteerImg.style.display = "none";
-		volunteerbtn.innerHTML = "Show Image";
-	}
-}
+$(document).ready(function () {
+	$("#themebtn2").on("click", function() {
+		$("#volunteer").toggle();
+		if ($("#themebtn2").html() == "Show Image") {
+			$("#themebtn2").html("Hide Image");
+		} else {
+			$("#themebtn2").html("Show Image");
+		}
+	});
+});
 
 // Code for Popping Up the Personal Photo and Closing it
 var modal = document.getElementById("myModal");
