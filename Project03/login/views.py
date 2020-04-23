@@ -24,6 +24,8 @@ def login_view(request):
         if user is not None:
             login(request,user)
             request.session['failed'] = False
+            request.session['counter'] = 1
+            request.session['post_counter'] = 1
             return redirect('social:messages_view')
         else:
             request.session['failed'] = True
@@ -60,10 +62,28 @@ def signup_view(request):
     -------
       out : (HttpRepsonse) - renders signup.djhtml
     """
-    form = None
 
-    # TODO Objective 1: implement signup view
 
-    context = { 'signup_form' : form }
+    if request.method == 'POST':
+       form = UserCreationForm(request.POST)
+       if form.is_valid():
+          username = form.cleaned_data.get('username')
+          password = form.cleaned_data.get('password1')
+          models.UserInfo.objects.create_user_info(username=username,password=password)
+          user = authenticate(request,username=username, password=password)
+          if user is not None:
+             login(request,user)
+             request.session['failed'] = False
+             request.session['counter'] = 1
+             request.session['post_counter'] = 1
+             return redirect('social:messages_view')
+          else:
+             request.session['failed'] = True
+    else:
+       form = UserCreationForm()
+    failed = request.session.get('signup_failed',False)
+    context = { 'signup_form' : form
+                 , 'failed' : failed }
+    return render(request, 'signup.djhtml', context)
 
-    return render(request,'signup.djhtml',context)
+     

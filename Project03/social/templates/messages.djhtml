@@ -18,33 +18,50 @@
       <!-- TODO Objective 9: Display Posts using posts list -->
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
             {% load static %}
+            {% for p in posts %}
             <img src="{% static 'avatar.png'  %}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-            <span class="w3-right w3-opacity">TODO Add Post Timestamp</span>
-            <h4 class="post-user">TODO Add Post Username</h4><br>
+            <span class="w3-right w3-opacity">{{ p.timestamp  }}</span>
+            <h4 class="post-user">{{ p.owner.user.username  }}</h4><br>
+            <h4 class="post-user">{{ p.content  }}</h4><br>
             <hr class="w3-clear">
 
             <!-- TODO Objective 10: Add Post id and likes count -->
-                    <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom like-button" id="post-0">
-                        <i class="fa fa-thumbs-up"></i>  Like</button>
-            <span class="w3-button w3-theme-d1 w3-margin-bottom">0 Likes</span>
-        </div>
+                    {% if user_info in p.likes.all %}
+                        <button type="button" class="w3-button w3-disabled" id="{{ p.id }}">
+                            <i class="fa fa-thumbs-up"></i>  Like</button>
+                     <span class="w3-button w3-theme-d1 w3-margin-bottom">{{ p.likes.all.count }} Likes</span><br><br>
 
-      <div class="w3-container">
-          <p><button id="more-button" class="w3-button w3-block w3-theme-l4">More</button></p>
-      </div>
+                    {% else %}
+                        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom like-button" id="{{ p.id }}">
+                            <i class="fa fa-thumbs-up"></i>  Like</button>
+                     <span class="w3-button w3-theme-d1 w3-margin-bottom">{{ p.likes.all.count }} Likes</span><br><br>
+                    {% endif %}
+            {% endfor %}
+        </div> 
+      {% if post_counter <= length_of_post_list %}
+          <div class="w3-container">
+              <p><button id="more-button" class="w3-button w3-block w3-theme-l4">More</button></p>
+          </div>
+      {% else %}
+          <div class="w3-container">
+              <p><button id="more-button" class="w3-disabled">More</b$
+          </div>
+      {% endif %}  
 {% endblock %}
 
 {% block right_column %}
     <!-- TODO Objective 7: use user_info object to render friends -->
+      {% for i in friends_list %}
       <div class="w3-card w3-round w3-white w3-center">
         <div class="w3-container">
           <p>Friend</p>
           {% load static %}
           <img src="{% static 'avatar.png'  %}" alt="Avatar" style="width:50%"><br>
-          <span>TODO Add Friend</span>
+          <span>{{ i.user.username }}</span>
         </div>
       </div>
       <br>
+      {% endfor %}
 {% endblock %}
 
 {% block script %}

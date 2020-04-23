@@ -2,9 +2,30 @@
    | Handle Submitting Posts - called by $('#post-button').click(submitPost)
    ********************************************************************************************
    */
+
+function frResponse(data,status) {
+    if (status == 'success') {
+        // reload page to update like count
+        location.reload();
+    }
+    else {
+        alert('failed to create friend request ' + status);
+    }
+}
+
+
 function submitPost(event) {
-    alert('Post Button Pressed');
+    // alert('Post Button Pressed');
     // TODO Objective 8: send contents of post-text via AJAX Post to post_submit_view (reload page upon success)
+    let postContent = document.getElementById("post-text").innerHTML;
+    let post_button = document.getElementById("post_button");
+    let json_data = { 'postContent' : postContent , 'post_button' : post_button };
+    let url_path = post_submit_url;
+
+    $.post(url_path,
+           json_data,
+           frResponse);
+    
 }
 
 /* ********************************************************************************************
@@ -12,8 +33,17 @@ function submitPost(event) {
    ********************************************************************************************
    */
 function submitLike(event) {
-    alert('Like Button Pressed');
+    // alert('Like Button Pressed');
     // TODO Objective 10: send post-n id via AJAX POST to like_view (reload page upon success)
+    let postID = event.target.id;
+    let json_data = { 'postID' : postID };
+    let url_path = like_post_url;
+
+    $.post(url_path,
+           json_data,
+           frResponse);
+
+    
 }
 
 /* ********************************************************************************************
